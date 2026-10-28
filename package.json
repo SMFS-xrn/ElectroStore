@@ -1,0 +1,7 @@
+{"name":"electrostore","private":true,"scripts":{
+"setup":"npm install && npm install --prefix server && npm install --prefix client && npm run db:migrate --prefix server && npm run db:seed --prefix server",
+"dev":"concurrently -n server,client -c red,gray \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+"admin:create":"npm run admin:create --prefix server",
+"test":"npm test --prefix server",
+"build":"npm run build --prefix client"},
+"devDependencies":{"concurrently":"^9.0.1"}}
